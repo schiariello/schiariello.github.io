@@ -13077,6 +13077,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://schiariello.github.io/">https://schiariello.github.io/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Final-Tutorial:-Cervical-Cancer-Risk-Factors">Final Tutorial: Cervical Cancer Risk Factors<a class="anchor-link" href="#Final-Tutorial:-Cervical-Cancer-Risk-Factors">&#182;</a></h1>
 </div>
 </div>
@@ -13097,12 +13105,19 @@ div#notebook {
 <p>Cervical cancer involves multiple risk factors and must be diagnosed by a healthcare professional after a biopsy examination. An increases sexual activity can introduce the risk of contracting HPV, the main risk factor for cervical cancer. HPV is a sexually transmitted infection which results in abnormal cell growth within the cervix, regularly screened in a Pap test. Family history of cervical cancer can also be a risk factor, along with the use of oral hormonal contraception pills. Other risk factors include, but are not limited to, smoking, past STDs, number of children, and history of diagnosed cervical cancer.</p>
 <p>The purpose of this project is to examine data regarding cervical cancer risk factors and, hopefully, make meaningful insights about causation and correlations between certain risk factors, socioeconomic factors, healthcare structures, and current racial disparities. Note: this may be a lofty goal.</p>
 <h3 id="Related-Questions-&amp;-Hypotheses">Related Questions &amp; Hypotheses<a class="anchor-link" href="#Related-Questions-&amp;-Hypotheses">&#182;</a></h3><p>With this project, I hope to analyze cervical cancer risk factors.</p>
-
-<pre><code>1. Are there any factors that have a heavier weight than the others?
-2. What do the number of sexual partners or the age of first sexual intercourse mean as risk factors and how does their weight affect the possibility of getting cancer due to the spread of HPV?
-3. Hormonal contraceptives are believed to increase risk for cervical cancer if used for over a certain number of years. Is this the case? How many years is the threshold for which the risk increases?
-4. A further goal of mine would be to find another dataset about race/socioeconomic class/access to a clinic/etc. to further assess how those factors may weigh in on the likelihood of a woman contracting HPV or cervical cancer.
-5. Does history of having an STD mediate or moderate the likelihood of cocntracting abnormal cells in the cervix? Is it more to do with behavioral changes, or pathology? How can we tell?</code></pre>
+<ul>
+<li>Are there any factors that have a heavier weight than the others?</li>
+<li>What do the number of sexual partners or the age of first sexual intercourse mean as risk factors and how does their weight affect the possibility of getting cancer due to the spread of HPV?</li>
+<li>Hormonal contraceptives are believed to increase risk for cervical cancer if used for over a certain number of years. Is this - A further goal of mine would be to find another dataset about race/socioeconomic class/access to a clinic/etc. to further assess how those factors may weigh in on the likelihood of a woman contracting HPV or cervical cancer.</li>
+<li>Does history of having an STD mediate or moderate the likelihood of cocntracting abnormal cells in the cervix? Is it more to do with behavioral changes, or pathology? How can we tell?</li>
+<li>I hypothesize that I will be able to find trends in the following:
+<pre><code>  - Higher number of sexual partners, increased risk of cervical cancer
+  - Those who take hormonal contraceptives for longer, increased risk of cervical cancer
+  - Those who have contracted STDs, specifically HPV, increased risk of cervical cancer</code></pre>
+</li>
+<li>I hope to create behavioral insights regarding sexual behavior as it relates to cervical cancer</li>
+<li>I hope to find another dataset to relate risk of cervical cancer to what was discussed under "Project Description" like access to a clinic, accessibility of screening tests, regularity of visits to a clinic in underdeveloped neighborhoods, transportation time to the nearest clinic as it relates to risk of cervical cancer, neighborhood poverty levels, ability to make a follow up appointment, etc.</li>
+</ul>
 
 </div>
 </div>
@@ -13122,7 +13137,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\schia\schiariello.github.io\project_data\cervical_raw.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;..\schiariello.github.io\project_data\cervical_raw.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 
@@ -13461,12 +13476,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create values of NaN where there are currently ?</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;STDs: Time since last diagnosis&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;STDs: Time since last diagnosis&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create values of NaN where there are currently ?, in accordance with best practices for tidy data.</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13483,51 +13499,7 @@ div#notebook {
 
 
 
-
-<div class="output_text output_subarea ">
-<pre>0      NaN
-1      NaN
-2      NaN
-3      NaN
-4      NaN
-      ... 
-853    NaN
-854    NaN
-855    NaN
-856    NaN
-857    NaN
-Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
+<div class="output_html rendered_html output_subarea ">
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -13571,71 +13543,95 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
   </thead>
   <tbody>
     <tr>
-      <th>15</th>
-      <td>40</td>
-      <td>3</td>
+      <th>0</th>
       <td>18</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>15</td>
-      <td>0</td>
-      <td>...</td>
-      <td>?</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>41</td>
       <td>4</td>
-      <td>21</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0.25</td>
-      <td>0</td>
-      <td>...</td>
-      <td>?</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>43</td>
-      <td>3</td>
       <td>15</td>
-      <td>8</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15</td>
+      <td>1</td>
+      <td>14</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>52</td>
+      <td>5</td>
+      <td>16</td>
+      <td>4</td>
+      <td>1</td>
+      <td>37</td>
+      <td>37</td>
       <td>1</td>
       <td>3</td>
       <td>0</td>
       <td>...</td>
-      <td>?</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -13643,58 +13639,10 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
       <td>0</td>
     </tr>
     <tr>
-      <th>18</th>
-      <td>42</td>
-      <td>2</td>
-      <td>20</td>
-      <td>?</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>7</td>
-      <td>1</td>
-      <td>...</td>
-      <td>?</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>40</td>
-      <td>2</td>
-      <td>27</td>
-      <td>?</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>?</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>43</td>
-      <td>2</td>
-      <td>18</td>
+      <th>4</th>
+      <td>46</td>
+      <td>3</td>
+      <td>21</td>
       <td>4</td>
       <td>0</td>
       <td>0</td>
@@ -13703,7 +13651,7 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
       <td>15</td>
       <td>0</td>
       <td>...</td>
-      <td>?</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
       <td>0</td>
@@ -13715,91 +13663,43 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
       <td>0</td>
     </tr>
     <tr>
-      <th>21</th>
-      <td>41</td>
-      <td>3</td>
-      <td>17</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>10</td>
-      <td>0</td>
+      <th>...</th>
       <td>...</td>
-      <td>21</td>
-      <td>21</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>22</th>
-      <td>40</td>
-      <td>1</td>
+      <th>853</th>
+      <td>34</td>
+      <td>3</td>
       <td>18</td>
-      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1</td>
-      <td>0.25</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>...</td>
-      <td>2</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>40</td>
-      <td>1</td>
-      <td>20</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>15</td>
-      <td>0</td>
-      <td>...</td>
-      <td>?</td>
       <td>NaN</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>40</td>
-      <td>3</td>
-      <td>15</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>3</td>
-      <td>0</td>
-      <td>...</td>
-      <td>?</td>
       <td>NaN</td>
       <td>0</td>
       <td>0</td>
@@ -13811,19 +13711,19 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
       <td>0</td>
     </tr>
     <tr>
-      <th>25</th>
-      <td>44</td>
-      <td>3</td>
+      <th>854</th>
+      <td>32</td>
+      <td>2</td>
       <td>19</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>8</td>
       <td>0</td>
       <td>...</td>
-      <td>?</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
       <td>0</td>
@@ -13835,19 +13735,67 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
       <td>0</td>
     </tr>
     <tr>
-      <th>26</th>
-      <td>39</td>
-      <td>5</td>
-      <td>23</td>
+      <th>855</th>
+      <td>25</td>
       <td>2</td>
+      <td>17</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.08</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>33</td>
+      <td>2</td>
+      <td>24</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.08</td>
+      <td>0</td>
       <td>...</td>
-      <td>?</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>29</td>
+      <td>2</td>
+      <td>20</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.5</td>
+      <td>0</td>
+      <td>...</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
       <td>0</td>
@@ -13860,7 +13808,7 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
     </tr>
   </tbody>
 </table>
-<p>12 rows × 36 columns</p>
+<p>858 rows × 36 columns</p>
 </div>
 </div>
 
@@ -13869,6 +13817,202 @@ Name: STDs: Time since last diagnosis, Length: 858, dtype: object</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List the variable types for each column of the data, to ensure they are as we intend to use them later.</span>
+
+<span class="c1"># float64, int64 = quantitative</span>
+<span class="c1"># object = categorical</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Age                                             int64
+Number of sexual partners                      object
+First sexual intercourse                       object
+Num of pregnancies                             object
+Smokes                                         object
+Smokes (years)                                 object
+Smokes (packs/year)                            object
+Hormonal Contraceptives                        object
+Hormonal Contraceptives (years)                object
+IUD                                            object
+IUD (years)                                    object
+STDs                                           object
+STDs (number)                                  object
+STDs:condylomatosis                            object
+STDs:cervical condylomatosis                   object
+STDs:vaginal condylomatosis                    object
+STDs:vulvo-perineal condylomatosis             object
+STDs:syphilis                                  object
+STDs:pelvic inflammatory disease               object
+STDs:genital herpes                            object
+STDs:molluscum contagiosum                     object
+STDs:AIDS                                      object
+STDs:HIV                                       object
+STDs:Hepatitis B                               object
+STDs:HPV                                       object
+STDs: Number of diagnosis                       int64
+STDs: Time since first diagnosis               object
+STDs: Time since last diagnosis                object
+Dx:Cancer                                       int64
+Dx:CIN (Cervical Intraepithelial Neoplasia)     int64
+Dx:HPV                                          int64
+Dx                                              int64
+Hinselmann                                      int64
+Schiller                                        int64
+Citology                                        int64
+Biopsy                                          int64
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By running the .types() command, we can see how pandas is categorizing each variable. There are specific ways in which we want to categorize our own data: either quantitative (like "age", properly categorized by pandas) or categorical (like "smokes", improperly characterized by pandas).</p>
+<p>Note: For the "STDs:  ..." columns, we will have to determine whether to view the data contained as "quantitative: the number of times a participant has gotten the particular STD in question" or "categorical: whether or not the participant has contracted the STD in this column." I will determine this on a later date, so I am leaving these alone for now, currently categorized categorically.</p>
+<p>Depending on whether we want to examine STDs in generalas they relate to cervical cancer vs. the risk of each particular STD with regard to later cervical cancer, we can combine those columns later on to create a more tidy data set.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This block will convert from categorical to quantitative and vice-versa as deemed necessary by me.</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Number of sexual partners&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Number of sexual partners&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;First sexual intercourse&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;First sexual intercourse&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Num of pregnancies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Num of pregnancies&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Smokes (years)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Smokes (years)&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Smokes (packs/year)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Smokes (packs/year)&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Hormonal Contraceptives (years)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Hormonal Contraceptives (years)&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;IUD (years)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;IUD (years)&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;STDs: Time since first diagnosis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;STDs: Time since first diagnosis&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;STDs: Time since last diagnosis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;STDs: Time since last diagnosis&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx:Cancer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx:Cancer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx:CIN (Cervical Intraepithelial Neoplasia)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx:CIN (Cervical Intraepithelial Neoplasia)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx:HPV&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx:HPV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Hinselmann&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Hinselmann&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Schiller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Schiller&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Citology&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Citology&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Biopsy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Biopsy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check to ensure the characterizations of the variable names have been changed</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Age                                              int64
+Number of sexual partners                      float64
+First sexual intercourse                       float64
+Num of pregnancies                             float64
+Smokes                                          object
+Smokes (years)                                 float64
+Smokes (packs/year)                            float64
+Hormonal Contraceptives                         object
+Hormonal Contraceptives (years)                float64
+IUD                                             object
+IUD (years)                                    float64
+STDs                                            object
+STDs (number)                                   object
+STDs:condylomatosis                             object
+STDs:cervical condylomatosis                    object
+STDs:vaginal condylomatosis                     object
+STDs:vulvo-perineal condylomatosis              object
+STDs:syphilis                                   object
+STDs:pelvic inflammatory disease                object
+STDs:genital herpes                             object
+STDs:molluscum contagiosum                      object
+STDs:AIDS                                       object
+STDs:HIV                                        object
+STDs:Hepatitis B                                object
+STDs:HPV                                        object
+STDs: Number of diagnosis                        int64
+STDs: Time since first diagnosis               float64
+STDs: Time since last diagnosis                float64
+Dx:Cancer                                       object
+Dx:CIN (Cervical Intraepithelial Neoplasia)     object
+Dx:HPV                                          object
+Dx                                              object
+Hinselmann                                      object
+Schiller                                        object
+Citology                                        object
+Biopsy                                          object
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Next-Steps-&amp;-Justifications">Next Steps &amp; Justifications<a class="anchor-link" href="#Next-Steps-&amp;-Justifications">&#182;</a></h3><p>Future plans for this project, and the dataset include creating a tidier version of the data, with shorter, more succinct variable names. I held off on this for the first Milestone since I have not yet determined which risk factors to delve into. For example, creating a tidier dataset by merging all of the STD columns into more of a categorical "Have you gotten an STD" may hinder insights, which I do not want to do just yet. Currently, I recognize the need to create a dataset that is long rather than fat, but I have not determned how best to melt the data down without losing information that I may want to access later. I kept the lengthy column names for the sake of an audience with less knowledge of cervical cancer and medical jargon. In order to efficiently call and work with the variables, I recognize that I will have to update the columns later on.</p>
+<p>In the future, I will also hone my questions while searching for a race/SES/access to healthcare dataset to compare and add to these as risk factors.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
