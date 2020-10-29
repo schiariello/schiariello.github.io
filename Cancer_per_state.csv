@@ -1,0 +1,52 @@
+Area,CancerType,Year,Sex,Race,AgeAdjustedRate,CaseCount,Population
+Alabama,'Cervix','2013-2017','Female','All Races',9.4,1196,12508432
+Alaska,'Cervix','2013-2017','Female','All Races',7.2,120,1760225
+Arizona,'Cervix','2013-2017','Female','All Races',6.5,1118,17196077
+Arkansas,'Cervix','2013-2017','Female','All Races',9.5,729,7580171
+California,'Cervix','2013-2017','Female','All Races',7.2,7280,97858943
+Colorado,'Cervix','2013-2017','Female','All Races',6.2,868,13547027
+Connecticut,'Cervix','2013-2017','Female','All Races',6.1,591,9185764
+Delaware,'Cervix','2013-2017','Female','All Races',7.8,199,2427686
+District of Columbia,'Cervix','2013-2017','Female','All Races',8.8,155,1771124
+Florida,'Cervix','2013-2017','Female','All Races',8.9,5007,51742206
+Georgia,'Cervix','2013-2017','Female','All Races',7.8,2096,26125516
+Hawaii,'Cervix','2013-2017','Female','All Races',6.8,246,3533448
+Idaho,'Cervix','2013-2017','Female','All Races',6.5,259,4140371
+Illinois,'Cervix','2013-2017','Female','All Races',7.7,2657,32707441
+Indiana,'Cervix','2013-2017','Female','All Races',8.2,1372,16769893
+Iowa,'Cervix','2013-2017','Female','All Races',7.5,578,7847801
+Kansas,'Cervix','2013-2017','Female','All Races',7.6,536,7291447
+Kentucky,'Cervix','2013-2017','Female','All Races',9.6,1085,11231982
+Louisiana,'Cervix','2013-2017','Female','All Races',9.1,1086,11893727
+Maine,'Cervix','2013-2017','Female','All Races',5.9,221,3395272
+Maryland,'Cervix','2013-2017','Female','All Races',6.6,1101,15408650
+Massachusetts,'Cervix','2013-2017','Female','All Races',5.2,983,17491111
+Michigan,'Cervix','2013-2017','Female','All Races',6.7,1721,25261928
+Minnesota,'Cervix','2013-2017','Female','All Races',5.5,770,13790325
+Mississippi,'Cervix','2013-2017','Female','All Races',9.4,735,7691541
+Missouri,'Cervix','2013-2017','Female','All Races',8,1266,15465014
+Montana,'Cervix','2013-2017','Female','All Races',6.8,187,2563836
+Nebraska,'Cervix','2013-2017','Female','All Races',7.8,362,4745037
+Nevada,'Cervix','2013-2017','Female','All Races',9,659,7142783
+New Hampshire,'Cervix','2013-2017','Female','All Races',4.7,176,3379433
+New Jersey,'Cervix','2013-2017','Female','All Races',7.7,1912,22713701
+New Mexico,'Cervix','2013-2017','Female','All Races',8.2,419,5280885
+New York,'Cervix','2013-2017','Female','All Races',7.8,4297,50545552
+North Carolina,'Cervix','2013-2017','Female','All Races',7.1,1902,25778899
+North Dakota,'Cervix','2013-2017','Female','All Races',5.5,97,1815350
+Ohio,'Cervix','2013-2017','Female','All Races',7.9,2406,29648242
+Oklahoma,'Cervix','2013-2017','Female','All Races',9.2,880,9838759
+Oregon,'Cervix','2013-2017','Female','All Races',7,727,10165960
+Pennsylvania,'Cervix','2013-2017','Female','All Races',7.3,2548,32646399
+Rhode Island,'Cervix','2013-2017','Female','All Races',7.1,200,2717149
+South Carolina,'Cervix','2013-2017','Female','All Races',7.9,1029,12583299
+South Dakota,'Cervix','2013-2017','Female','All Races',7.3,153,2123961
+Tennessee,'Cervix','2013-2017','Female','All Races',8.4,1489,16894386
+Texas,'Cervix','2013-2017','Female','All Races',9.2,6256,69069088
+Utah,'Cervix','2013-2017','Female','All Races',5.4,354,7433986
+Vermont,'Cervix','2013-2017','Female','All Races',4.3,71,1582190
+Virginia,'Cervix','2013-2017','Female','All Races',6,1343,21241473
+Washington,'Cervix','2013-2017','Female','All Races',6.7,1238,17967620
+West Virginia,'Cervix','2013-2017','Female','All Races',9.2,440,4647683
+Wisconsin,'Cervix','2013-2017','Female','All Races',6.4,954,14494108
+Wyoming,'Cervix','2013-2017','Female','All Races',6.4,93,1425887
